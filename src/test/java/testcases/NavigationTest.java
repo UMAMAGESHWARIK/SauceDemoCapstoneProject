@@ -3,27 +3,27 @@ package testcases;
 import base.DriverManager;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import pages.LoginPage;
 import pages.MenuPage;
 
-@Listeners(utils.TestListener.class)
 public class NavigationTest {
-
+  
     WebDriver driver;
     LoginPage loginPage;
     MenuPage menuPage;
 
-    @BeforeMethod
+    @BeforeClass
     public void setUp() {
         DriverManager.initDriver();
         driver = DriverManager.getDriver();
-
-        // Login pre-condition
+    }
+    @BeforeMethod
+    public void login(){
         loginPage = new LoginPage();
         loginPage.open();
         loginPage.login("standard_user", "secret_sauce");
@@ -32,13 +32,28 @@ public class NavigationTest {
         menuPage = new MenuPage();
     }
 
-    @Test
+    @Test(priority=3)
+    public void navigateToAboutPage() {
+        menuPage.goToAbout();
+        Assert.assertTrue(driver.getCurrentUrl().contains("saucelabs.com"), 
+                "About page did not open!");
+    }
+    
+    @Test(priority=1)
     public void verifyMenuPresent() {
         Assert.assertTrue(menuPage.isMenuButtonVisible(), 
                 "Menu button is not visible!");
     }
 
-    @Test
+
+    @Test(priority=4)
+    public void verifyFooterLinksAndIcons() {
+        Assert.assertTrue(menuPage.isTwitterIconVisible(), "Twitter icon missing!");
+        Assert.assertTrue(menuPage.isFacebookIconVisible(), "Facebook icon missing!");
+        Assert.assertTrue(menuPage.isLinkedInIconVisible(), "LinkedIn icon missing!");
+       
+    }
+    @Test(priority=2)
     public void logoutFromMenu() {
     	
         menuPage.logout();
@@ -46,24 +61,9 @@ public class NavigationTest {
                 "User was not redirected to login page after logout!");
     }
 
-    @Test
-    public void navigateToAboutPage() {
-        menuPage.goToAbout();
-        Assert.assertTrue(driver.getCurrentUrl().contains("saucelabs.com"), 
-                "About page did not open!");
-    }
-
-    @Test
-    public void verifyFooterLinksAndIcons() {
-        Assert.assertTrue(menuPage.isTwitterIconVisible(), "Twitter icon missing!");
-        Assert.assertTrue(menuPage.isFacebookIconVisible(), "Facebook icon missing!");
-        Assert.assertTrue(menuPage.isLinkedInIconVisible(), "LinkedIn icon missing!");
-       
-    }
-    
-
-    @AfterMethod
+    @AfterClass
     public void tearDown() {
         DriverManager.quitDriver();
     }
 }
+

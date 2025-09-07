@@ -1,5 +1,8 @@
 package testcases;
 import base.DriverManager;
+
+
+import java.util.List;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.*;
@@ -8,7 +11,6 @@ import pages.CheckOutPage;
 import pages.LoginPage;
 import pages.ProductsPage;
 
-@Listeners(utils.TestListener.class)
 public class CheckOutTest {
 
     WebDriver driver;
@@ -17,19 +19,22 @@ public class CheckOutTest {
     CartPage cartPage;
     CheckOutPage checkoutPage;
 
-    @BeforeMethod
+    @BeforeClass
     public void setUp() {
         DriverManager.initDriver();
         driver = DriverManager.getDriver();
+    }
 
         // Login
+       @BeforeMethod
+        public void login() {
         loginPage = new LoginPage();
         loginPage.open();
         loginPage.login("standard_user", "secret_sauce");
 
         // Add product and go to cart
         productPage = new ProductsPage();
-        productPage.addFirstProductToCart();
+        productPage.addProductToCart();
         productPage.goToCart();
 
         cartPage = new CartPage();
@@ -37,7 +42,7 @@ public class CheckOutTest {
 
         checkoutPage = new CheckOutPage();
     }
-
+       
     @Test
     public void checkoutWithValidInformation() {
         checkoutPage.enterCheckoutInformation("Uma", "Mageshwari", "600001");
@@ -65,12 +70,25 @@ public class CheckOutTest {
         checkoutPage.enterCheckoutInformation("Uma", "Mageshwari", "600001");
         checkoutPage.clickContinue();
 
-        int itemCount = checkoutPage.getSummaryItemCount();
-        Assert.assertFalse(itemCount < 0, "Order summary has no items!");
+        List<String> productNames = checkoutPage.getSummaryProductNames();
+        List<String> productPrices = checkoutPage.getSummaryProductPrices();
+        List<String> productQuantities = checkoutPage.getSummaryProductQuantities();
+
+        // Check that the summary has at least one item
+        Assert.assertFalse(productNames.isEmpty(), "Order summary has no products!");
+
+        // verify first product details
+        Assert.assertEquals(productNames.get(0), "Sauce Labs Backpack", "Product name mismatch!");
+        Assert.assertEquals(productPrices.get(0), "$29.99", "Product price mismatch!");
+        Assert.assertEquals(productQuantities.get(0), "1", "Product quantity mismatch!");
+
+        System.out.println("Order summary products: " + productNames);
     }
 
-    @AfterMethod
+
+    @AfterClass
     public void tearDown() {
         DriverManager.quitDriver();
     }
 }
+

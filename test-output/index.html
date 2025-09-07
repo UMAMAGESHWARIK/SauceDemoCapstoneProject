@@ -92,7 +92,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">20 methods,   20 passed</span>
+                    <span class="method-stats">19 methods,   19 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -153,22 +153,17 @@
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-SauceDemo_Suite" title="testcases.CartTest" class="method navigator-link" hash-for-method="removeItemFromCart">removeItemFromCart</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
                         <a href="#" panel-name="suite-SauceDemo_Suite" title="testcases.ProductsTest" class="method navigator-link" hash-for-method="removeProductFromCart">removeProductFromCart</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-SauceDemo_Suite" title="runners.TestRunner" class="method navigator-link" hash-for-method="runScenario(&quot;Invalid login with wrong credentials&quot;, &quot;SauceDemo Login&quot;)">runScenario("Invalid login with wrong credentials", "SauceDemo Login")</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-SauceDemo_Suite" title="runners.TestRunner" class="method navigator-link" hash-for-method="runScenario(&quot;Valid login with standard_user&quot;, &quot;SauceDemo Login&quot;)">runScenario("Valid login with standard_user", "SauceDemo Login")</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-SauceDemo_Suite" title="runners.TestRunner" class="method navigator-link" hash-for-method="runScenario(&quot;Valid login with standard_user&quot;, &quot;SauceDemo Login&quot;)">runScenario("Valid login with standard_user", "SauceDemo Login")</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-SauceDemo_Suite" title="runners.TestRunner" class="method navigator-link" hash-for-method="runScenario(&quot;Invalid login with wrong credentials&quot;, &quot;SauceDemo Login&quot;)">runScenario("Invalid login with wrong credentials", "SauceDemo Login")</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
@@ -328,13 +323,6 @@
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="removeItemFromCart">
-                  </a> <!-- removeItemFromCart -->
-                  <span class="method-name">removeItemFromCart</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
                   <a name="verifyCartItems">
                   </a> <!-- verifyCartItems -->
                   <span class="method-name">verifyCartItems</span>
@@ -379,20 +367,20 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="runScenario(&quot;Invalid login with wrong credentials&quot;, &quot;SauceDemo Login&quot;)">
-                  </a> <!-- runScenario("Invalid login with wrong credentials", "SauceDemo Login") -->
+                  <a name="runScenario(&quot;Valid login with standard_user&quot;, &quot;SauceDemo Login&quot;)">
+                  </a> <!-- runScenario("Valid login with standard_user", "SauceDemo Login") -->
                   <span class="method-name">runScenario</span>
-                  <span class="parameters">("Invalid login with wrong credentials","SauceDemo Login")</span>
+                  <span class="parameters">("Valid login with standard_user","SauceDemo Login")</span>
                   <em>
 (Runs Cucumber Scenarios)                  </em>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="runScenario(&quot;Valid login with standard_user&quot;, &quot;SauceDemo Login&quot;)">
-                  </a> <!-- runScenario("Valid login with standard_user", "SauceDemo Login") -->
+                  <a name="runScenario(&quot;Invalid login with wrong credentials&quot;, &quot;SauceDemo Login&quot;)">
+                  </a> <!-- runScenario("Invalid login with wrong credentials", "SauceDemo Login") -->
                   <span class="method-name">runScenario</span>
-                  <span class="parameters">("Valid login with standard_user","SauceDemo Login")</span>
+                  <span class="parameters">("Invalid login with wrong credentials","SauceDemo Login")</span>
                   <em>
 (Runs Cucumber Scenarios)                  </em>
                 </div> <!-- method-content -->
@@ -466,92 +454,88 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(20);
+data.addRows(19);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'navigateToAboutPage')
 data.setCell(0, 2, 'testcases.NavigationTest')
-data.setCell(0, 3, 18400);
+data.setCell(0, 3, 21377);
 data.setCell(1, 0, 1)
 data.setCell(1, 1, 'runScenario')
 data.setCell(1, 2, 'runners.TestRunner')
-data.setCell(1, 3, 8426);
+data.setCell(1, 3, 4342);
 data.setCell(2, 0, 2)
 data.setCell(2, 1, 'runScenario')
 data.setCell(2, 2, 'runners.TestRunner')
-data.setCell(2, 3, 2798);
+data.setCell(2, 3, 2994);
 data.setCell(3, 0, 3)
 data.setCell(3, 1, 'logoutFromMenu')
 data.setCell(3, 2, 'testcases.NavigationTest')
-data.setCell(3, 3, 712);
+data.setCell(3, 3, 833);
 data.setCell(4, 0, 4)
-data.setCell(4, 1, 'checkoutWithValidInformation')
+data.setCell(4, 1, 'verifyOrderSummaryDetails')
 data.setCell(4, 2, 'testcases.CheckOutTest')
-data.setCell(4, 3, 387);
+data.setCell(4, 3, 670);
 data.setCell(5, 0, 5)
-data.setCell(5, 1, 'verifyOrderSummaryDetails')
+data.setCell(5, 1, 'checkoutWithValidInformation')
 data.setCell(5, 2, 'testcases.CheckOutTest')
-data.setCell(5, 3, 294);
+data.setCell(5, 3, 631);
 data.setCell(6, 0, 6)
 data.setCell(6, 1, 'checkoutWithMissingRequiredFields')
 data.setCell(6, 2, 'testcases.CheckOutTest')
-data.setCell(6, 3, 277);
+data.setCell(6, 3, 526);
 data.setCell(7, 0, 7)
-data.setCell(7, 1, 'addProductToCart')
-data.setCell(7, 2, 'testcases.ProductsTest')
-data.setCell(7, 3, 160);
+data.setCell(7, 1, 'checkoutWithEmptyCart')
+data.setCell(7, 2, 'testcases.CartTest')
+data.setCell(7, 3, 304);
 data.setCell(8, 0, 8)
-data.setCell(8, 1, 'removeProductFromCart')
+data.setCell(8, 1, 'addProductToCart')
 data.setCell(8, 2, 'testcases.ProductsTest')
-data.setCell(8, 3, 154);
+data.setCell(8, 3, 253);
 data.setCell(9, 0, 9)
-data.setCell(9, 1, 'verifyProductNamesAndPricesDisplayed')
+data.setCell(9, 1, 'removeProductFromCart')
 data.setCell(9, 2, 'testcases.ProductsTest')
-data.setCell(9, 3, 134);
+data.setCell(9, 3, 205);
 data.setCell(10, 0, 10)
-data.setCell(10, 1, 'checkoutWithEmptyCart')
-data.setCell(10, 2, 'testcases.CartTest')
-data.setCell(10, 3, 118);
+data.setCell(10, 1, 'verifyProductNamesAndPricesDisplayed')
+data.setCell(10, 2, 'testcases.ProductsTest')
+data.setCell(10, 3, 204);
 data.setCell(11, 0, 11)
 data.setCell(11, 1, 'openProductDetailsPage')
 data.setCell(11, 2, 'testcases.ProductsTest')
-data.setCell(11, 3, 81);
+data.setCell(11, 3, 133);
 data.setCell(12, 0, 12)
 data.setCell(12, 1, 'continueShoppingFromCart')
 data.setCell(12, 2, 'testcases.CartTest')
-data.setCell(12, 3, 78);
+data.setCell(12, 3, 122);
 data.setCell(13, 0, 13)
 data.setCell(13, 1, 'proceedToCheckoutFromCart')
 data.setCell(13, 2, 'testcases.CartTest')
-data.setCell(13, 3, 68);
+data.setCell(13, 3, 108);
 data.setCell(14, 0, 14)
-data.setCell(14, 1, 'removeItemFromCart')
-data.setCell(14, 2, 'testcases.CartTest')
-data.setCell(14, 3, 66);
+data.setCell(14, 1, 'verifyFooterLinksAndIcons')
+data.setCell(14, 2, 'testcases.NavigationTest')
+data.setCell(14, 3, 95);
 data.setCell(15, 0, 15)
-data.setCell(15, 1, 'verifyFooterLinksAndIcons')
-data.setCell(15, 2, 'testcases.NavigationTest')
-data.setCell(15, 3, 61);
+data.setCell(15, 1, 'verifyCartItems')
+data.setCell(15, 2, 'testcases.CartTest')
+data.setCell(15, 3, 77);
 data.setCell(16, 0, 16)
 data.setCell(16, 1, 'measureProductPageLoadTime')
 data.setCell(16, 2, 'testcases.ProductsTest')
-data.setCell(16, 3, 43);
+data.setCell(16, 3, 49);
 data.setCell(17, 0, 17)
-data.setCell(17, 1, 'verifyProductListingPage')
-data.setCell(17, 2, 'testcases.ProductsTest')
-data.setCell(17, 3, 29);
+data.setCell(17, 1, 'verifyMenuPresent')
+data.setCell(17, 2, 'testcases.NavigationTest')
+data.setCell(17, 3, 44);
 data.setCell(18, 0, 18)
-data.setCell(18, 1, 'verifyCartItems')
-data.setCell(18, 2, 'testcases.CartTest')
-data.setCell(18, 3, 28);
-data.setCell(19, 0, 19)
-data.setCell(19, 1, 'verifyMenuPresent')
-data.setCell(19, 2, 'testcases.NavigationTest')
-data.setCell(19, 3, 25);
+data.setCell(18, 1, 'verifyProductListingPage')
+data.setCell(18, 2, 'testcases.ProductsTest')
+data.setCell(18, 3, 38);
 window.suiteTableData['SauceDemo_Suite']= { tableData: data, tableDiv: 'times-div-SauceDemo_Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 32 seconds</span>
+              <span class="suite-total-time">Total running time: 33 seconds</span>
               <div id="times-div-SauceDemo_Suite">
               </div> <!-- times-div-SauceDemo_Suite -->
             </div> <!-- times-div -->
@@ -586,255 +570,207 @@ return data;
             <div class="chronological-class">
               <div class="chronological-class-name">runners.TestRunner</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
-                <span class="method-name">setUpClass(org.testng.TestRunner@499c4d61)</span>
-                <span class="method-start">246 ms</span>
+                <span class="method-name">setUpClass(org.testng.TestRunner@3d235635)</span>
+                <span class="method-start">379 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">runScenario("Valid login with standard_user", "SauceDemo Login")</span>
-                <span class="method-start">769 ms</span>
+                <span class="method-start">1125 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">runScenario("Invalid login with wrong credentials", "SauceDemo Login")</span>
-                <span class="method-start">9203 ms</span>
+                <span class="method-start">5482 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">tearDownClass</span>
-                <span class="method-start">12008 ms</span>
+                <span class="method-start">8483 ms</span>
               </div> <!-- configuration-class after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">testcases.ProductsTest</div> <!-- chronological-class-name -->
-              <div class="configuration-method before">
+              <div class="configuration-class before">
                 <span class="method-name">setUp</span>
-                <span class="method-start">12061 ms</span>
+                <span class="method-start">8569 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="configuration-method before">
+                <span class="method-name">login</span>
+                <span class="method-start">9956 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">addProductToCart</span>
-                <span class="method-start">14754 ms</span>
+                <span class="method-start">11503 ms</span>
               </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">tearDown</span>
-                <span class="method-start">15096 ms</span>
-              </div> <!-- configuration-method after -->
               <div class="configuration-method before">
-                <span class="method-name">setUp</span>
-                <span class="method-start">15226 ms</span>
+                <span class="method-name">login</span>
+                <span class="method-start">11965 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">measureProductPageLoadTime</span>
-                <span class="method-start">17503 ms</span>
+                <span class="method-start">12476 ms</span>
               </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">tearDown</span>
-                <span class="method-start">17860 ms</span>
-              </div> <!-- configuration-method after -->
               <div class="configuration-method before">
-                <span class="method-name">setUp</span>
-                <span class="method-start">17976 ms</span>
+                <span class="method-name">login</span>
+                <span class="method-start">12778 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">openProductDetailsPage</span>
-                <span class="method-start">20358 ms</span>
+                <span class="method-start">13212 ms</span>
               </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">tearDown</span>
-                <span class="method-start">20550 ms</span>
-              </div> <!-- configuration-method after -->
               <div class="configuration-method before">
-                <span class="method-name">setUp</span>
-                <span class="method-start">20669 ms</span>
+                <span class="method-name">login</span>
+                <span class="method-start">13528 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">removeProductFromCart</span>
-                <span class="method-start">23062 ms</span>
+                <span class="method-start">13980 ms</span>
               </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">tearDown</span>
-                <span class="method-start">23384 ms</span>
-              </div> <!-- configuration-method after -->
               <div class="configuration-method before">
-                <span class="method-name">setUp</span>
-                <span class="method-start">23522 ms</span>
+                <span class="method-name">login</span>
+                <span class="method-start">14440 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">verifyProductListingPage</span>
-                <span class="method-start">25917 ms</span>
+                <span class="method-start">15059 ms</span>
               </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">tearDown</span>
-                <span class="method-start">26207 ms</span>
-              </div> <!-- configuration-method after -->
               <div class="configuration-method before">
-                <span class="method-name">setUp</span>
-                <span class="method-start">26353 ms</span>
+                <span class="method-name">login</span>
+                <span class="method-start">15318 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">verifyProductNamesAndPricesDisplayed</span>
-                <span class="method-start">28974 ms</span>
+                <span class="method-start">15747 ms</span>
               </div> <!-- test-method -->
-              <div class="configuration-method after">
+              <div class="configuration-class after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">29297 ms</span>
-              </div> <!-- configuration-method after -->
+                <span class="method-start">16180 ms</span>
+              </div> <!-- configuration-class after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">testcases.CartTest</div> <!-- chronological-class-name -->
-              <div class="configuration-method before">
+              <div class="configuration-class before">
                 <span class="method-name">setUp</span>
-                <span class="method-start">29428 ms</span>
+                <span class="method-start">16370 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="configuration-method before">
+                <span class="method-name">login</span>
+                <span class="method-start">17812 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">checkoutWithEmptyCart</span>
-                <span class="method-start">32095 ms</span>
+                <span class="method-start">19378 ms</span>
               </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">tearDown</span>
-                <span class="method-start">32346 ms</span>
-              </div> <!-- configuration-method after -->
               <div class="configuration-method before">
-                <span class="method-name">setUp</span>
-                <span class="method-start">32471 ms</span>
+                <span class="method-name">login</span>
+                <span class="method-start">19836 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">continueShoppingFromCart</span>
-                <span class="method-start">35092 ms</span>
+                <span class="method-start">20566 ms</span>
               </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">tearDown</span>
-                <span class="method-start">35377 ms</span>
-              </div> <!-- configuration-method after -->
               <div class="configuration-method before">
-                <span class="method-name">setUp</span>
-                <span class="method-start">35502 ms</span>
+                <span class="method-name">login</span>
+                <span class="method-start">20949 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">proceedToCheckoutFromCart</span>
-                <span class="method-start">38328 ms</span>
+                <span class="method-start">21617 ms</span>
               </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">tearDown</span>
-                <span class="method-start">38577 ms</span>
-              </div> <!-- configuration-method after -->
               <div class="configuration-method before">
-                <span class="method-name">setUp</span>
-                <span class="method-start">38702 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="test-method">
-                <span class="method-name">removeItemFromCart</span>
-                <span class="method-start">41437 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">tearDown</span>
-                <span class="method-start">41659 ms</span>
-              </div> <!-- configuration-method after -->
-              <div class="configuration-method before">
-                <span class="method-name">setUp</span>
-                <span class="method-start">41776 ms</span>
+                <span class="method-name">login</span>
+                <span class="method-start">21903 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">verifyCartItems</span>
-                <span class="method-start">44538 ms</span>
+                <span class="method-start">22503 ms</span>
               </div> <!-- test-method -->
-              <div class="configuration-method after">
+              <div class="configuration-class after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">44711 ms</span>
-              </div> <!-- configuration-method after -->
+                <span class="method-start">22751 ms</span>
+              </div> <!-- configuration-class after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">testcases.NavigationTest</div> <!-- chronological-class-name -->
-              <div class="configuration-method before">
+              <div class="configuration-class before">
                 <span class="method-name">setUp</span>
-                <span class="method-start">44842 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="test-method">
-                <span class="method-name">logoutFromMenu</span>
-                <span class="method-start">47250 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">tearDown</span>
-                <span class="method-start">48125 ms</span>
-              </div> <!-- configuration-method after -->
+                <span class="method-start">22972 ms</span>
+              </div> <!-- configuration-class before -->
               <div class="configuration-method before">
-                <span class="method-name">setUp</span>
-                <span class="method-start">48260 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="test-method">
-                <span class="method-name">navigateToAboutPage</span>
-                <span class="method-start">50772 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">tearDown</span>
-                <span class="method-start">69426 ms</span>
-              </div> <!-- configuration-method after -->
-              <div class="configuration-method before">
-                <span class="method-name">setUp</span>
-                <span class="method-start">69606 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="test-method">
-                <span class="method-name">verifyFooterLinksAndIcons</span>
-                <span class="method-start">72998 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">tearDown</span>
-                <span class="method-start">73336 ms</span>
-              </div> <!-- configuration-method after -->
-              <div class="configuration-method before">
-                <span class="method-name">setUp</span>
-                <span class="method-start">73481 ms</span>
+                <span class="method-name">login</span>
+                <span class="method-start">24411 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">verifyMenuPresent</span>
-                <span class="method-start">76258 ms</span>
+                <span class="method-start">26052 ms</span>
               </div> <!-- test-method -->
-              <div class="configuration-method after">
+              <div class="configuration-method before">
+                <span class="method-name">login</span>
+                <span class="method-start">26431 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">logoutFromMenu</span>
+                <span class="method-start">26938 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method before">
+                <span class="method-name">login</span>
+                <span class="method-start">27901 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">navigateToAboutPage</span>
+                <span class="method-start">28308 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method before">
+                <span class="method-name">login</span>
+                <span class="method-start">50193 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">verifyFooterLinksAndIcons</span>
+                <span class="method-start">51014 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-class after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">76546 ms</span>
-              </div> <!-- configuration-method after -->
+                <span class="method-start">51335 ms</span>
+              </div> <!-- configuration-class after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">testcases.CheckOutTest</div> <!-- chronological-class-name -->
-              <div class="configuration-method before">
+              <div class="configuration-class before">
                 <span class="method-name">setUp</span>
-                <span class="method-start">76653 ms</span>
+                <span class="method-start">51572 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="configuration-method before">
+                <span class="method-name">login</span>
+                <span class="method-start">53171 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">checkoutWithMissingRequiredFields</span>
-                <span class="method-start">79163 ms</span>
+                <span class="method-start">55084 ms</span>
               </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">tearDown</span>
-                <span class="method-start">79594 ms</span>
-              </div> <!-- configuration-method after -->
               <div class="configuration-method before">
-                <span class="method-name">setUp</span>
-                <span class="method-start">79709 ms</span>
+                <span class="method-name">login</span>
+                <span class="method-start">55769 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">checkoutWithValidInformation</span>
-                <span class="method-start">82445 ms</span>
+                <span class="method-start">56534 ms</span>
               </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">tearDown</span>
-                <span class="method-start">82974 ms</span>
-              </div> <!-- configuration-method after -->
               <div class="configuration-method before">
-                <span class="method-name">setUp</span>
-                <span class="method-start">83086 ms</span>
+                <span class="method-name">login</span>
+                <span class="method-start">57324 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">verifyOrderSummaryDetails</span>
-                <span class="method-start">85574 ms</span>
+                <span class="method-start">58009 ms</span>
               </div> <!-- test-method -->
-              <div class="configuration-method after">
+              <div class="configuration-class after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">86035 ms</span>
-              </div> <!-- configuration-method after -->
+                <span class="method-start">58839 ms</span>
+              </div> <!-- configuration-class after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">testcases.CartTest</div> <!-- chronological-class-name -->
               <div class="configuration-suite after">
                 <span class="method-name">afterSuiteTearDown</span>
-                <span class="method-start">86480 ms</span>
+                <span class="method-start">59720 ms</span>
               </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

@@ -4,7 +4,6 @@ import base.DriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -33,18 +32,6 @@ public class CartPage {
 
         return productNames;
     }
-
-
-    // Remove first item from the cart
-    public void removeFirstItem() {
-        List<WebElement> removeButtons = driver.findElements(By.xpath("//button[contains(text(),'Remove')]"));
-        if (!removeButtons.isEmpty()) {
-            removeButtons.get(0).click();
-        } else {
-            throw new IllegalStateException("No items available in the cart to remove!");
-        }
-    }
-
 
     // Continue shopping
     public void continueShopping() {

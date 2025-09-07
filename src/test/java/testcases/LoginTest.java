@@ -3,19 +3,17 @@ package testcases;
 import base.DriverManager;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Listeners;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import pages.LoginPage;
 
-@Listeners(utils.TestListener.class)
 public class LoginTest {
 
     WebDriver driver;
     LoginPage loginPage;
 
-    @BeforeMethod
+    @BeforeClass
     public void setUp() {
         DriverManager.initDriver();
         driver = DriverManager.getDriver();
@@ -43,7 +41,7 @@ public class LoginTest {
 
     
 
-    @AfterMethod
+    @AfterClass
     public void tearDown() {
         DriverManager.quitDriver();
     }

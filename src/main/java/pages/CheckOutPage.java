@@ -1,9 +1,11 @@
 package pages;
 
 import base.DriverManager;
+
 import java.time.Duration;
 
-
+import java.util.List;
+import java.util.ArrayList;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -19,9 +21,12 @@ public class CheckOutPage {
     private By firstName = By.id("first-name");
     private By lastName = By.id("last-name");
     private By postalCode = By.id("postal-code");
-    private By continueBtn = By.id("continue");
-    private By cancelBtn = By.id("cancel");
+    private By continueButtonn = By.id("continue");
+    private By cancelButton = By.id("cancel");
     private By summaryItems = By.className("cart_item");
+    private By productName = By.cssSelector(".inventory_item_name");
+    private By productPrice = By.cssSelector(".inventory_item_price");
+    private By productQuantity = By.cssSelector(".cart_quantity");
 
     // Constructor
     public CheckOutPage() {
@@ -40,7 +45,7 @@ public class CheckOutPage {
 
     // Click continue button
     public void clickContinue() {
-        driver.findElement(continueBtn).click();
+        driver.findElement(continueButtonn).click();
     }
 
     // Click finish button
@@ -52,7 +57,7 @@ public class CheckOutPage {
 
     // Cancel checkout
     public void clickCancel() {
-        driver.findElement(cancelBtn).click();
+        driver.findElement(cancelButton).click();
     }
 
     // Get error message
@@ -61,15 +66,36 @@ public class CheckOutPage {
         WebElement errorMsg = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("h3[data-test='error']")));
         return errorMsg.getText();
     }
+    // Get summary product names
+    public List<String> getSummaryProductNames() {
+        new WebDriverWait(driver, Duration.ofSeconds(5))
+                .until(ExpectedConditions.visibilityOfAllElementsLocatedBy(summaryItems));
 
-    // Get number of items in order summary
-    public int getSummaryItemCount() {
-        return driver.findElements(summaryItems).size();
+        List<WebElement> items = driver.findElements(summaryItems);
+        List<String> names = new ArrayList<>();
+        for (WebElement item : items) {
+            names.add(item.findElement(productName).getText());
+        }
+        return names;
     }
-
-    // Get current URL
-    public String getCurrentUrl() {
-        return driver.getCurrentUrl();
+    // Get summary product prices
+    public List<String> getSummaryProductPrices() {
+        List<WebElement> items = driver.findElements(summaryItems);
+        List<String> prices = new ArrayList<>();
+        for (WebElement item : items) {
+            prices.add(item.findElement(productPrice).getText());
+        }
+        return prices;
     }
+   // Get summary product quantities
+    public List<String> getSummaryProductQuantities() {
+        List<WebElement> items = driver.findElements(summaryItems);
+        List<String> quantities = new ArrayList<>();
+        for (WebElement item : items) {
+            quantities.add(item.findElement(productQuantity).getText());
+        }
+        return quantities;
+    }
+   
 }
 

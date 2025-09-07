@@ -56,29 +56,23 @@ public class ProductsPage {
 
     
     // Add first product to cart
-    public void addFirstProductToCart() {
+    public void addProductToCart() {
         driver.findElements(addToCartButtons).get(0).click();
     }
 
     // Remove first product
-    public void removeFirstProductFromCart() {
+    public void removeProductFromCart() {
         driver.findElements(removeButtons).get(0).click();
     }
     
-    public String getFirstProductButtonText() {
+    public String getProductButtonText() {
         return driver.findElements(addToCartButtons).get(0).getText();
     }
 
-    // Add multiple products
-    public void addMultipleProducts(int count) {
-        List<WebElement> buttons = driver.findElements(addToCartButtons);
-        for (int i = 0; i < count && i < buttons.size(); i++) {
-            buttons.get(i).click();
-        }
-    }
+   
     
     // Click on the first product from the product list to open its details page
-    public void openFirstProductDetails() {
+    public void openProductDetails() {
         driver.findElements(productNames).get(0).click();
     }
 

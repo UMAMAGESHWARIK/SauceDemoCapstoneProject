@@ -4,7 +4,8 @@ import base.BaseTest;
 import base.DriverManager;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -21,11 +22,13 @@ public class CartTest extends BaseTest {
     ProductsPage productPage;
     CartPage cartPage;
 
-    @BeforeMethod
+    @BeforeClass
     public void setUp() {
         DriverManager.initDriver();
         driver = DriverManager.getDriver();
-
+    }
+    @BeforeMethod
+    public void login() {
         // Login 
         loginPage = new LoginPage();
         loginPage.open();
@@ -33,7 +36,7 @@ public class CartTest extends BaseTest {
 
         // Add one product and open cart
         productPage = new ProductsPage();
-        productPage.addFirstProductToCart();
+        productPage.addProductToCart();
         productPage.goToCart();
 
         cartPage = new CartPage();
@@ -44,13 +47,6 @@ public class CartTest extends BaseTest {
     public void verifyCartItems() {
         List<String> items = cartPage.getCartItems();
         Assert.assertTrue(items.size() > 0, "Cart is empty after adding product!");
-    }
-
-    @Test
-    public void removeItemFromCart() {
-        cartPage.removeFirstItem();
-        List<String> items = cartPage.getCartItems();
-        Assert.assertFalse(items.size() > 0, "Item was not removed from cart!");
     }
 
     @Test
@@ -79,7 +75,7 @@ public class CartTest extends BaseTest {
     }
 
   
-     @AfterMethod
+     @AfterClass
     public void tearDown() {
         DriverManager.quitDriver();
     }
