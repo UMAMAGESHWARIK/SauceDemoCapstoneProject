@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [SauceDemo Test Suite]" guice-stage="DEVELOPMENT">
+  <listeners>
+    <listener class-name="utils.TestListener"/>
+  </listeners>
+  <test thread-count="5" name="All Test Cases(failed)">
+    <classes>
+      <class name="testcases.ProductsTest">
+        <methods>
+          <include name="verifyProductNamesAndPricesDisplayed"/>
+          <include name="TC036_measureProductPageLoadTime"/>
+          <include name="verifyProductListingPage"/>
+          <include name="removeProductFromCart"/>
+          <include name="tearDown"/>
+          <include name="addProductToCart"/>
+          <include name="openProductDetailsPage"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- testcases.ProductsTest -->
+      <class name="testcases.CheckOutTest">
+        <methods>
+          <include name="setUp"/>
+          <include name="checkoutWithValidInformation"/>
+          <include name="verifyOrderSummaryDetails"/>
+          <include name="checkoutWithMissingRequiredFields"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- testcases.CheckOutTest -->
+      <class name="testcases.CartTest">
+        <methods>
+          <include name="verifyCartItems"/>
+          <include name="proceedToCheckoutFromCart"/>
+          <include name="checkoutWithEmptyCart"/>
+          <include name="removeItemFromCart"/>
+          <include name="tearDown"/>
+          <include name="continueShoppingFromCart"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- testcases.CartTest -->
+      <class name="testcases.NavigationTest">
+        <methods>
+          <include name="TC028_navigateToAboutPage"/>
+          <include name="logoutFromBurgerMenu"/>
+          <include name="TC026_verifyBurgerMenuPresent"/>
+          <include name="TC030_verifyFooterLinksAndIcons"/>
+          <include name="tearDown"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- testcases.NavigationTest -->
+      <class name="runners.TestRunner">
+        <methods>
+          <include name="setUpClass"/>
+          <include name="runScenario"/>
+          <include name="tearDownClass"/>
+        </methods>
+      </class> <!-- runners.TestRunner -->
+    </classes>
+  </test> <!-- All Test Cases(failed) -->
+</suite> <!-- Failed suite [SauceDemo Test Suite] -->

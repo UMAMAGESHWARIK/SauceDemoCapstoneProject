@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [SauceDemo Suite]" guice-stage="DEVELOPMENT">
+  <listeners>
+    <listener class-name="utils.TestListener"/>
+  </listeners>
+  <test thread-count="5" name="All SauceDemo Tests(failed)">
+    <classes>
+      <class name="testcases.ProductsTest">
+        <methods>
+          <include name="verifyProductNamesAndPricesDisplayed"/>
+          <include name="verifyProductListingPage"/>
+          <include name="removeProductFromCart"/>
+          <include name="tearDown"/>
+          <include name="addProductToCart"/>
+          <include name="measureProductPageLoadTime"/>
+          <include name="openProductDetailsPage"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- testcases.ProductsTest -->
+      <class name="testcases.NavigationTest">
+        <methods>
+          <include name="logoutFromMenu"/>
+          <include name="navigateToAboutPage"/>
+          <include name="tearDown"/>
+          <include name="verifyFooterLinksAndIcons"/>
+          <include name="setUp"/>
+          <include name="verifyMenuPresent"/>
+        </methods>
+      </class> <!-- testcases.NavigationTest -->
+      <class name="testcases.CartTest">
+        <methods>
+          <include name="afterSuiteTearDown"/>
+          <include name="beforeSuiteSetup"/>
+          <include name="verifyCartItems"/>
+          <include name="proceedToCheckoutFromCart"/>
+          <include name="checkoutWithEmptyCart"/>
+          <include name="removeItemFromCart"/>
+          <include name="tearDown"/>
+          <include name="continueShoppingFromCart"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- testcases.CartTest -->
+      <class name="testcases.CheckOutTest">
+        <methods>
+          <include name="setUp"/>
+          <include name="checkoutWithValidInformation"/>
+          <include name="verifyOrderSummaryDetails"/>
+          <include name="checkoutWithMissingRequiredFields"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- testcases.CheckOutTest -->
+      <class name="runners.TestRunner">
+        <methods>
+          <include name="setUpClass"/>
+          <include name="runScenario" invocation-numbers="0"/>
+          <include name="tearDownClass"/>
+        </methods>
+      </class> <!-- runners.TestRunner -->
+    </classes>
+  </test> <!-- All SauceDemo Tests(failed) -->
+</suite> <!-- Failed suite [SauceDemo Suite] -->
