@@ -1,26 +1,26 @@
 pipeline {
     agent any
 
-    tools {
-        maven 'Maven3'
-        jdk 'jdk21'
-    }
-
     stages {
         stage('Checkout') {
             steps {
-                checkout scm
+                // Always get the latest code from GitHub
+                git branch: 'main', 
+                    url: 'https://github.com/UMAMAGESHWARIK/SauceDemoCapstoneProject.git',
+                    credentialsId: 'github_credentials'
             }
         }
 
         stage('Build') {
             steps {
+                // Clean and build project
                 bat 'mvn clean install -DskipTests'
             }
         }
 
-        stage('Run Tests') {
+        stage('Test') {
             steps {
+                // Run tests
                 bat 'mvn test'
             }
         }
@@ -28,10 +28,10 @@ pipeline {
         stage('Publish Results') {
             steps {
                 junit 'target/surefire-reports/*.xml'
-                archiveArtifacts artifacts: 'target/**/*.html', allowEmptyArchive: true
             }
         }
     }
 }
+
 
 
