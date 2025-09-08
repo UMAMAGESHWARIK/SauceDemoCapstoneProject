@@ -1,42 +1,37 @@
 pipeline {
-  agent any
+    agent any
 
-  tools {
-    maven 'Maven3'   // name you set in Global Tool Config
-    jdk 'jdk21'      // name you set in Global Tool Config
-  }
-
-  stages {
-    stage('Checkout') {
-      steps {
-        checkout scm
-      }
+    tools {
+        maven 'Maven3'
+        jdk 'jdk21'
     }
 
-    stage('Build') {
-      steps {
-        // use 'bat' on Windows agents instead of 'sh'
-        sh 'mvn -B clean compile'
-      }
-    }
+    stages {
+        stage('Checkout') {
+            steps {
+                checkout scm
+            }
+        }
 
-    stage('Run Tests') {
-      steps {
-        sh 'mvn -B test'
-      }
-    }
+        stage('Build') {
+            steps {
+                bat 'mvn clean install -DskipTests'
+            }
+        }
 
-    stage('Publish Results') {
-      steps {
-        junit 'target/surefire-reports/*.xml'
-        archiveArtifacts artifacts: 'target/**/*.html', fingerprint: true
-      }
-    }
-  }
+        stage('Run Tests') {
+            steps {
+                bat 'mvn test'
+            }
+        }
 
-  post {
-    always {
-      echo "Pipeline finished. Build #${env.BUILD_NUMBER}"
+        stage('Publish Results') {
+            steps {
+                junit 'target/surefire-reports/*.xml'
+                archiveArtifacts artifacts: 'target/**/*.html', allowEmptyArchive: true
+            }
+        }
     }
-  }
 }
+
+
