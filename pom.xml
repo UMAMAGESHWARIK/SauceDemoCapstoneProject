@@ -90,4 +90,6 @@
         <testFailureIgnore>false</testFailureIgnore>
     </configuration>
 </plugin>
+</project>
+	
 
