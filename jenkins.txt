@@ -1,37 +1,40 @@
 pipeline {
     agent any
 
+    tools {
+        jdk 'JDK21'
+        maven 'Maven3'
+    }
+
     stages {
         stage('Checkout') {
             steps {
-                // Always get the latest code from GitHub
-                git branch: 'main', 
-                    url: 'https://github.com/UMAMAGESHWARIK/SauceDemoCapstoneProject.git',
-                    credentialsId: 'github_credentials'
+                git branch: 'master',
+                    url: 'https://github.com/UMAMAGESHWARIK/SauceDemoCapstoneProject.git'
             }
         }
 
-        stage('Build') {
+        stage('Build & Test') {
             steps {
-                // Clean and build project
-                bat 'mvn clean install -DskipTests'
+                bat 'mvn clean test -Dheadless=true'
             }
-        }
-
-        stage('Test') {
-            steps {
-                // Run tests
-                bat 'mvn test'
-            }
-        }
-
-        stage('Publish Results') {
-            steps {
-                junit 'target/surefire-reports/*.xml'
+            post {
+                always {
+                    archiveArtifacts artifacts: 'test-output/**', fingerprint: true
+                    publishHTML([
+                        allowMissing: false,
+                        alwaysLinkToLastBuild: true,
+                        keepAll: true,
+                        reportDir: 'test-output',
+                        reportFiles: 'ExtentReport.html',
+                        reportName: 'Extent Report'
+                    ])
+                }
             }
         }
     }
 }
+
 
 
 
