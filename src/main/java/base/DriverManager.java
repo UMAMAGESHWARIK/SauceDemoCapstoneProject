@@ -1,8 +1,5 @@
 package base;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -18,13 +15,6 @@ public class DriverManager {
             ChromeOptions options = new ChromeOptions();
             // Open browser in incognito mode
             options.addArguments("--incognito");
-
-            //  Disable Chrome password manager & save password popups
-            Map<String, Object> prefs = new HashMap<>();
-            prefs.put("credentials_enable_service", false);
-            prefs.put("profile.password_manager_enabled", false);
-            options.setExperimentalOption("prefs", prefs);
-            
             driver.set(new ChromeDriver(options));
             driver.get().manage().window().maximize();
         }

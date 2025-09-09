@@ -82,7 +82,6 @@ public class CheckOutTest {
         Assert.assertEquals(productPrices.get(0), "$29.99", "Product price mismatch!");
         Assert.assertEquals(productQuantities.get(0), "1", "Product quantity mismatch!");
 
-        System.out.println("Order summary products: " + productNames);
     }
 
 

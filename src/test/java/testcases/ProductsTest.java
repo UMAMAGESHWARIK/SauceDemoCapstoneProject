@@ -13,6 +13,7 @@ import org.testng.annotations.Test;
 import pages.LoginPage;
 import pages.ProductsPage;
 
+
 public class ProductsTest {
 
     WebDriver driver;
@@ -51,6 +52,7 @@ public class ProductsTest {
 
     @Test
     public void addProductToCart() {
+    	// add product to cart
         productPage.addProductToCart();
         productPage.goToCart();
         Assert.assertTrue(productPage.getCurrentUrl().contains("cart"),
@@ -60,7 +62,7 @@ public class ProductsTest {
     
     @Test
     public void removeProductFromCart() {
-        // Add first product to cart
+        // remove product to cart
         productPage.addProductToCart();
         productPage.removeProductFromCart();
 

@@ -32,7 +32,7 @@ public class NavigationTest {
         menuPage = new MenuPage();
     }
 
-    @Test(priority=3)
+    @Test(priority=2)
     public void navigateToAboutPage() {
         menuPage.goToAbout();
         Assert.assertTrue(driver.getCurrentUrl().contains("saucelabs.com"), 
@@ -46,14 +46,14 @@ public class NavigationTest {
     }
 
 
-    @Test(priority=4)
+    @Test(priority=3)
     public void verifyFooterLinksAndIcons() {
         Assert.assertTrue(menuPage.isTwitterIconVisible(), "Twitter icon missing!");
         Assert.assertTrue(menuPage.isFacebookIconVisible(), "Facebook icon missing!");
         Assert.assertTrue(menuPage.isLinkedInIconVisible(), "LinkedIn icon missing!");
        
     }
-    @Test(priority=2)
+    @Test(priority=4)
     public void logoutFromMenu() {
     	
         menuPage.logout();
