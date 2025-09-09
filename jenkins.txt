@@ -9,23 +9,21 @@ pipeline {
             }
         }
 
-stage('Push Changes') {
-    steps {
-        echo 'Pushing local changes to GitHub...'
-        withCredentials([usernamePassword(credentialsId: 'CapstoneProject', usernameVariable: 'GIT_USER', passwordVariable: 'GIT_TOKEN')]) {
-            bat '''
-                git config --global user.email "umssmageshwari@gmail.com"
-                git config --global user.name "Admin"
+        stage('Push Changes') {
+            steps {
+                echo 'Pushing local changes to GitHub...'
+                withCredentials([usernamePassword(credentialsId: 'CapstoneProject', usernameVariable: 'GIT_USER', passwordVariable: 'GIT_TOKEN')]) {
+                    bat '''
+                        git config --global user.email "umssmageshwari@gmail.com"
+                        git config --global user.name "Admin"
 
-                git add .
-                git commit -m "Automated commit from Jenkins" || echo No changes to commit
+                        git add .
+                        git commit -m "Automated commit from Jenkins" || echo No changes to commit
 
-                git push https://%GIT_USER%:%GIT_TOKEN%@github.com/UMAMAGESHWARIK/SauceDemoCapstoneProject.git HEAD:main
-            '''
-        }
-    }
-}
-
+                        git push https://%GIT_USER%:%GIT_TOKEN%@github.com/UMAMAGESHWARIK/SauceDemoCapstoneProject.git HEAD:main
+                    '''
+                }
+            }
         }
 
         stage('Build & Test') {
