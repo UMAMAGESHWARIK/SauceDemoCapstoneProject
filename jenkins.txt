@@ -12,7 +12,7 @@ pipeline {
         stage('Push Changes') {
             steps {
                 echo 'Pushing local changes to GitHub...'
-                withCredentials([usernamePassword(credentialsId: 'CapstoneProject', usernameVariable: 'GIT_USER', passwordVariable: 'GIT_TOKEN')]) {
+                withCredentials([usernamePassword(credentialsId: 'github_credentials', usernameVariable: 'GIT_USER', passwordVariable: 'GIT_TOKEN')]) {
                     bat '''
                         git config --global user.email "umssmageshwari@gmail.com"
                         git config --global user.name "Admin"
@@ -36,7 +36,7 @@ pipeline {
     post {
         always {
             archiveArtifacts artifacts: 'test-output/**', fingerprint: true
-            publishHTML([
+            publishHTML(target: [
                 allowMissing: false,
                 alwaysLinkToLastBuild: true,
                 keepAll: true,
@@ -47,4 +47,3 @@ pipeline {
         }
     }
 }
-
