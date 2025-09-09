@@ -83,22 +83,27 @@
         </dependency>
     </dependencies>
 
-    <build>
-        <plugins>
-            <!-- Surefire Plugin for running TestNG/Cucumber -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <version>3.2.5</version>
-                <configuration>
-                    <includes>
-                        <include>**/*Runner.java</include>
-                    </includes>
-                    <testFailureIgnore>false</testFailureIgnore>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
+   <build>
+    <plugins>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-surefire-plugin</artifactId>
+            <version>3.2.5</version>
+            <configuration>
+                <includes>
+                    <!-- Run all Cucumber Runner classes -->
+                    <include>**/*Runner.java</include>
+                </includes>
+                <suiteXmlFiles>
+                    <!-- Run TestNG suite as well -->
+                    <suiteXmlFile>testng.xml</suiteXmlFile>
+                </suiteXmlFiles>
+                <testFailureIgnore>false</testFailureIgnore>
+            </configuration>
+        </plugin>
+    </plugins>
+</build>
+
 </project>
 
 
