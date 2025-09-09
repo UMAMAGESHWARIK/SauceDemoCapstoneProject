@@ -1,8 +1,0 @@
-testcases\LoginTest.class
-testcases\NavigationTest.class
-testcases\CartTest.class
-runners\TestRunner.class
-testcases\CheckOutTest.class
-testcases\ProductsTest.class
-StepDefinitions\LoginSteps.class
-hooks\Hooks.class
